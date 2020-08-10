@@ -1,3 +1,19 @@
+/******************************************************************************
+ * Copyright (C) 2020 by Hassan El-shazly
+ *
+ * Redistribution, modification or use of this software in source or binary
+ * forms is permitted as long as the files maintain this copyright.
+ *
+ *****************************************************************************/
+ /**
+  * @file main.cpp
+  *
+  * This file defines huffman class
+  *
+  * @author Hassan El-shazly
+  * @date Last Edit Aug-2020
+  *
+  */
 #include <iostream>
 
 #include "huffman.h"
@@ -22,7 +38,10 @@ int main(int argc, char** argv)
     input = argv[2];
 
     if (argc == 3)
-        output = "out.txt";
+        if(input != "out.txt")
+            output = "out.txt";
+        else
+            output = "output.txt";
     else
         output = argv[3];
 
@@ -34,12 +53,18 @@ int main(int argc, char** argv)
     }
 
     ifstream input_file(input, std::ios::in | std::ios::binary);
-    if (!input_file.is_open())
-        cout << "exit_statue(2): couldn't open " << input << endl;
+    if (!input_file.is_open()) 
+    {
+        cout << "exit_statue(2): couldn't open \"" << input << "\"" << endl;
+        return 2;
+    }
 
     ofstream output_file(output, std::ios::out | std::ios::binary);
-    if (!input_file.is_open())
-        cout << "exit_statue(2): couldn't open " << output << endl;
+    if (!output_file.is_open()) 
+    {
+        cout << "exit_statue(2): couldn't open \"" << output << "\"" << endl;
+        return 2;
+    }
 
     if (mood ==  "-e")
     {
@@ -49,18 +74,19 @@ int main(int argc, char** argv)
             cout << "Compression ratio: " << ratio*100 << "%" << endl;
         }
         catch (const char * ex) {
-            cout << "exit_statue(3): Empty file" << output << endl;
+            cout << "exit_statue(3): Empty file \"" << input << "\"" << endl;
         }
     }
     else if (mood ==  "-d")
     {
-        try 
+        try
         {
             huff.decode(input_file, output_file);
         }
         catch (const char * ex)
         {
-            cout << "exit_statue(4): file is not vaild" << output << endl;
+            cout << "exit_statue(4): \"" << input << "\"" << " is not vaild for decoding\n"
+                 << "                 the file must be encoded with the smae program " << endl;
         }
     }
 
@@ -69,9 +95,11 @@ int main(int argc, char** argv)
 }
 
 void print_inst() {
-    cout << "huffman encoder\n";
-    cout << "Usage: ./huffman [mode] [input_file] [output_file]\n";
-    cout << "mode: -e --> for encoding";
-    cout << "      -d --> for decoding";
+    cout << "huffman encoder\n\n";
+    cout << "Usage: ./huffman.out [-e] [-d] <input_file> [output_file]\n\n";
+    cout << "if the <output_file> is not provided the default will be \"out.txt\"\n\n";
+    cout << "  -e   encode the <input_file> an store in the <output_file>\n";
+    cout << "  -d   decode the <input_file> an store in the <output_file>\n";
+
     cout << endl;
 }
