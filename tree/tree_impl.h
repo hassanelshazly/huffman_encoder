@@ -32,17 +32,17 @@ inline tree_node *tree_node::get_right()
     return right;
 }
 
-inline void set_data(char new_data)
+inline void tree_node::set_data(char new_data)
 {
     data = new_data;
 }
     
-inline void set_left(tree_node * new_left)
+inline void tree_node::set_left(tree_node * new_left)
 {
     left = new_left;
 }
 
-inline void set_right(tree_node * new_right)
+inline void tree_node::set_right(tree_node * new_right)
 {
     right = new_right;
 }
