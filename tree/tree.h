@@ -1,3 +1,21 @@
+/******************************************************************************
+ * Copyright (C) 2020 by Hassan El-shazly
+ *
+ * Redistribution, modification or use of this software in source or binary
+ * forms is permitted as long as the files maintain this copyright.
+ *
+ *****************************************************************************/
+ /**
+  * @file tree.h
+  *
+  * This file defines tree_node class
+  * A simple tree_node used to in huffman tree implementation
+  *
+  * @author Hassan El-shazly
+  * @date Last Edit Aug-2020
+  *
+  */
+
 #ifndef _TREE_H_
 #define _TREE_H_
 

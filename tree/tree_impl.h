@@ -1,3 +1,23 @@
+/******************************************************************************
+ * Copyright (C) 2020 by Hassan El-shazly
+ *
+ * Redistribution, modification or use of this software in source or binary
+ * forms is permitted as long as the files maintain this copyright.
+ *
+ *****************************************************************************/
+ /**
+  * @file tree_impl.h
+  *
+  * This file implements tree_node class
+  * A simple tree_node used to in huffman tree implementation
+  *
+  * @author Hassan El-shazly
+  * @date Last Edit Aug-2020
+  *
+  */
+#ifndef _TREE_IMPL_H_
+#define _TREE_IMPL_H_
+
 #include "tree.h"
 
 tree_node::tree_node()
@@ -61,3 +81,5 @@ void del_tree(tree_node *node)
     del_tree(node->get_right());
     delete node;
 }
+
+#endif // End of the file

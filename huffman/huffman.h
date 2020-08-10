@@ -1,5 +1,5 @@
 /******************************************************************************
- * Copyright (C) 2019 by Hassan El-shazly
+ * Copyright (C) 2020 by Hassan El-shazly
  *
  * Redistribution, modification or use of this software in source or binary
  * forms is permitted as long as the files maintain this copyright.
