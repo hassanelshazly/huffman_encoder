@@ -6,9 +6,6 @@
  *
  *****************************************************************************/
  /**
-  * @file huffman_impl.h
-  *
-  * This file implements huffman class
   *
   * @author Hassan El-shazly
   * @date Last Edit Aug-2020
@@ -29,7 +26,7 @@ using std::pair;
 using std::priority_queue;
 
 #define NUM_BITS 8
-#define PSEU_EOF 8
+#define PSEU_EOF 0
 #define SIGN (char)0xAA
 
 huffman::huffman()

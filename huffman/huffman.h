@@ -6,9 +6,6 @@
  *
  *****************************************************************************/
  /**
-  * @file huffman.h
-  *
-  * This file defines huffman class
   *
   * @author Hassan El-shazly
   * @date Last Edit Aug-2020
