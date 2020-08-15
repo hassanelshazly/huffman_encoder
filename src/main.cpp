@@ -6,9 +6,6 @@
  *
  *****************************************************************************/
  /**
-  * @file main.cpp
-  *
-  * This file defines huffman class
   *
   * @author Hassan El-shazly
   * @date Last Edit Aug-2020
@@ -38,10 +35,10 @@ int main(int argc, char** argv)
     input = argv[2];
 
     if (argc == 3)
-        if(input != "out.txt")
-            output = "out.txt";
+        if(input != "huffman_out.txt")
+            output = "huffman_out.txt";
         else
-            output = "output.txt";
+            output = "huffman_output.txt";
     else
         output = argv[3];
 
@@ -66,7 +63,7 @@ int main(int argc, char** argv)
         return 2;
     }
 
-    if (mood ==  "-e")
+    if (mood ==  "-e" || mood == "--encode")
     {
         try
         {
@@ -77,7 +74,7 @@ int main(int argc, char** argv)
             cout << "exit_statue(3): Empty file \"" << input << "\"" << endl;
         }
     }
-    else if (mood ==  "-d")
+    else if (mood ==  "-d" || mood == "--decode")
     {
         try
         {
@@ -96,10 +93,10 @@ int main(int argc, char** argv)
 
 void print_inst() {
     cout << "huffman encoder\n\n";
-    cout << "Usage: ./huffman.out [-e] [-d] <input_file> [output_file]\n\n";
-    cout << "if the <output_file> is not provided the default will be \"out.txt\"\n\n";
-    cout << "  -e   encode the <input_file> an store in the <output_file>\n";
-    cout << "  -d   decode the <input_file> an store in the <output_file>\n";
+    cout << "Usage: ./huffman.out [-e] [--encode] [-d] [--decode] <input_file> [output_file]\n\n";
+    cout << "if the <output_file> is not provided the default will be \"huffman_out.txt\"\n\n";
+    cout << "  -e --encode  encode the <input_file> an store in the <output_file>\n";
+    cout << "  -d --decode  decode the <input_file> an store in the <output_file>\n";
 
     cout << endl;
 }
