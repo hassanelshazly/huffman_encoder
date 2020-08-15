@@ -42,7 +42,7 @@ int main(int argc, char** argv)
     else
         output = argv[3];
 
-    if (mood != "-e" && mood != "-d")
+    if (mood != "-e" && mood != "-d" && mood != "--encode" && mood != "--decode")
     {
         cout << "exit_statue(1): you must provide \"-e\" or \"-d\" argument !" << endl;
         print_inst();
