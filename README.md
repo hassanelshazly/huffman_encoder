@@ -1,6 +1,6 @@
 # Huffman Encoder
 
-Simple compression/decompression tool using standard huffman algorithm
+Simple compression / decompression tool using standard huffman algorithm
 
 # Getting Started
 ```
@@ -20,6 +20,15 @@ $ make
 
 if the `output_file` is not provided the default will be `"huffman_out.txt"` or `"huffman_output.txt"`
 
+## Help
+```
+Usage: ./huffman.out [-e] [--encode] [-d] [--decode] <input_file> [output_file]
+
+if the <output_file> is not provided the default will be \"huffman_out.txt
+
+  -e --encode  encode the <input_file> an store in the <output_file>
+  -d --decode  decode the <input_file> an store in the <output_file>
+```
 
 ## License
 
